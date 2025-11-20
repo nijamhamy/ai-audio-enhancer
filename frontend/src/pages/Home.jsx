@@ -50,18 +50,32 @@ export default function Home() {
 
         const formData = new FormData();
         formData.append("file", audioFile);
-
         try {
-            const response = await axios.post("http://127.0.0.1:8000/enhance", formData, {
-                responseType: "blob",
-            });
+            const API_URL =
+                import.meta.env.VITE_API_URL ||
+                "https://audio-enhancer-backend-production-f297.up.railway.app";
+
+            const response = await axios.post(
+                `${API_URL}/enhance`,
+                formData,
+                {
+                    responseType: "blob",
+                    headers: {
+                        "Content-Type": "multipart/form-data",
+                    }
+                }
+            );
 
             const url = window.URL.createObjectURL(new Blob([response.data]));
             setDownloadUrl(url);
             setMessage("✔ Audio Enhanced Successfully!");
         } catch (error) {
+            console.error(error);
             setMessage("❌ Something went wrong. Try again.");
         }
+
+
+
 
         setLoading(false);
     };
