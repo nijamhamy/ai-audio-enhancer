@@ -1,0 +1,15 @@
+.single-post-content h2,
+.single-post-content h3,
+.single-post-content h4,
+.single-post-content h5,
+.single-post-content h6 {
+    color: #ffffff !important;
+    /* headings = white */
+}
+
+.single-post-content p,
+.single-post-content li {
+    color: #d0d0d0 !important;
+    /* paragraph = light gray */
+    line-height: 1.8;
+}
