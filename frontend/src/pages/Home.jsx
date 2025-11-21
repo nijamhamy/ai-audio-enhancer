@@ -36,7 +36,9 @@ export default function Home() {
     const handleFileUpload = (event) => {
         setAudioFile(event.target.files[0]);
         setMessage("");
+        setDownloadUrl("");   // ADD THIS LINE
     };
+
 
     const enhanceAudio = async () => {
         if (!audioFile) {
