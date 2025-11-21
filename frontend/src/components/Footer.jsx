@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Footer() {
@@ -9,19 +10,21 @@ export default function Footer() {
                 <h5 className="fw-bold mb-3">AI Audio Enhancer</h5>
 
                 <p className="text-secondary mb-2">
-                    Enhance your audio clarity using AI — noise removal, voice boosting,
-                    and studio-quality optimization.
+                    AI-powered audio clarity — noise removal, voice enhancement,
+                    and studio-level optimization.
                 </p>
 
                 {/* Footer Links */}
                 <div className="d-flex justify-content-center gap-4 mt-3 flex-wrap">
-                    <a href="/" className="text-light text-decoration-none">Home</a>
-                    <a href="/posts" className="text-light text-decoration-none">Posts</a>
-                    <a href="/about" className="text-light text-decoration-none">About Us</a>
-                    <a href="/privacy" className="text-light text-decoration-none">Privacy Policy</a>
-                    <a href="/terms" className="text-light text-decoration-none">Terms</a>
-                    <a href="/dmca" className="text-light text-decoration-none">DMCA</a>
-                    <a href="/contact" className="text-light text-decoration-none">Contact</a>
+
+                    <Link to="/" className="text-light text-decoration-none">Home</Link>
+
+                    <Link to="/posts" className="text-light text-decoration-none">Posts</Link>
+                    <Link to="/about" className="text-light text-decoration-none">About Us</Link>
+                    <Link to="/privacy" className="text-light text-decoration-none">Privacy Policy</Link>
+                    <Link to="/terms" className="text-light text-decoration-none">Terms</Link>
+                    <Link to="/dmca" className="text-light text-decoration-none">DMCA</Link>
+                    <Link to="/contact" className="text-light text-decoration-none">Contact</Link>
                 </div>
 
                 {/* Divider */}
