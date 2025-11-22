@@ -53,10 +53,12 @@ export default function Home() {
         const formData = new FormData();
         formData.append("file", audioFile);
         try {
+            // Backend URL selection (LOCAL or PRODUCTION)
             const API_URL =
-                import.meta.env.VITE_API_URL ||
+                import.meta.env.VITE_API_URL?.replace(/\/+$/, "") ||
                 "https://audio-enhancer-backend-production-f297.up.railway.app";
 
+            // Send request
             const response = await axios.post(
                 `${API_URL}/enhance`,
                 formData,
